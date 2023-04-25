@@ -7,23 +7,13 @@ namespace Array_Excercise3
 {
     public class Bai3
     {
-        public static void Main() 
-        {
-            //Bai3 d2 = new Bai3();
-            //d2.JaggedArray();
-            
-            Bai3 d1 = new Bai3();
-            //d1.MaTran();
-            d1.JaggedArray();
-
-        }
+        
         public void JaggedArray()
         {
             int i, j;
             int[][] arr1 = new int[10][];
 
-           
-            Write("Kich co ma tran vuong: ");
+            Write("Kich co mang: ");
             int n = Convert.ToInt32(ReadLine());
 
             /* nhap cac phan tu vao trong mang*/
@@ -35,12 +25,10 @@ namespace Array_Excercise3
                 for (j = 0; j < n; j++)
                 {
                     Write("Phan tu - [{0},{1}]: ", i, j);
-                    arr1[i][j] = Convert.ToInt32(ReadLine());
-                    
+                    arr1[i][j] = Convert.ToInt32(ReadLine());    
                     if (arr1[i][j] == 0)
                     {
-                        WriteLine("LOI");
-                        return;
+                        break;
                     }
                 }
             }
@@ -48,9 +36,17 @@ namespace Array_Excercise3
             Write("\nIn ma tran: \n");
             for (i = 0; i < n; i++)
             {
-                Write("\n");
+                Write("\n\n");
                 for (j = 0; j < n; j++)
-                    Write("{0}\t", arr1[i][j]);
+
+                    if (arr1[i][j] == 0)
+                    {
+                        Write("\t");
+                    }
+                    else
+                    {
+                        Write("{0}\t", arr1[i][j]);
+                    }
             }
             Write("\n\n");
 
@@ -59,7 +55,7 @@ namespace Array_Excercise3
         public void MaTran()
         {
             int i, j;
-            int[,] arr1 = new int[10,10];
+            int[,] arr1 = new int[10, 10];
             int sum = 0;
             int m = 0;
 
@@ -95,7 +91,7 @@ namespace Array_Excercise3
             // tinh tong cac phan tu tren duong cheo phu 
             for (i = 0; i < n; i++)
             {
-                
+
                 m = m - 1;
                 for (j = 0; j < n; j++)
                 {
@@ -112,3 +108,4 @@ namespace Array_Excercise3
         }
     }
 }
+
