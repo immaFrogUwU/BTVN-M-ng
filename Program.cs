@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using static System.Console;
 using System.IO;
 using static System.Array;
@@ -13,37 +13,44 @@ namespace Array_Excercise3
             //d2.JaggedArray();
             
             Bai3 d1 = new Bai3();
-            d1.MaTran();
+            //d1.MaTran();
+            d1.JaggedArray();
 
         }
         public void JaggedArray()
         {
             int i, j;
-            int[,] arr1 = new int[3, 3];
+            int[][] arr1 = new int[10][];
 
-            Write("Ma tran vuong NxN");
+           
+            Write("Kich co ma tran vuong: ");
+            int n = Convert.ToInt32(ReadLine());
+
             /* nhap cac phan tu vao trong mang*/
             WriteLine();
             Write("Nhap cac phan tu vao trong ma tran:\n");
-            for (i = 0; i < 3; i++)
+            for (i = 0; i < n; i++)
             {
-                for (j = 0; j < 3; j++)
+                arr1[i] = new int[n];
+                for (j = 0; j < n; j++)
                 {
                     Write("Phan tu - [{0},{1}]: ", i, j);
-                    arr1[i, j] = Convert.ToInt32(ReadLine());
-                    if (arr1[i, j] == 0)
+                    arr1[i][j] = Convert.ToInt32(ReadLine());
+                    
+                    if (arr1[i][j] == 0)
                     {
-                        break;
+                        WriteLine("LOI");
+                        return;
                     }
                 }
             }
 
             Write("\nIn ma tran: \n");
-            for (i = 0; i < 3; i++)
+            for (i = 0; i < n; i++)
             {
                 Write("\n");
-                for (j = 0; j < 3; j++)
-                    Write("{0}\t", arr1[i, j]);
+                for (j = 0; j < n; j++)
+                    Write("{0}\t", arr1[i][j]);
             }
             Write("\n\n");
 
